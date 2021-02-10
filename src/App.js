@@ -20,18 +20,19 @@ class App extends Component {
       }
     ]
     this.setState({posts});
-    localStorage.setItem("posts", this.state);
+    localStorage.setItem("posts", JSON.stringify(posts));
   }
 
   addPost(post) {
     const posts = [...this.state.posts];
-    localStorage.setItem("posts", this.state);
+    localStorage.setItem("posts", JSON.stringify(posts));
   }
   render() {
-    <>
-      <Form />
-      <BlogList />
-    </>
+   const posts = JSON.parse(localStorage.getItem("posts"))
+   return  (<div>
+      <Form  addPost={this.addPost}/>
+      <BlogList  posts={posts}/>
+    </div>)
   }
 }
 
