@@ -4,8 +4,10 @@ class Form extends Component {
 
     render() {
         return <form>
-                <input type="text"/>
-                <textarea></textarea>
+                <label htmlFor="blog-title">Blog Title</label>
+                <input type="text" id="blog-title" name="blog-title"/>
+                <lable htmlFor="blog-text">Blog Text</lable>
+                <textarea id="blog-text" name="blog-text"></textarea>
                 <button className="btn">Create Post!</button>
             </form>
     }
