@@ -1,14 +1,14 @@
-import { Component } from 'react';
 
-class BlogList extends Component {
-    render() {
-        return <ul>
-            <li>
-                <h1>This is a blog Title</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum iste nisi a itaque eligendi modi incidunt nobis nesciunt eveniet similique ex error, non, dolor consectetur consequuntur dignissimos est odit dolores.</p>
+function BlogList(props) {
+        const post = JSON.parse(props.blogs).map((blog, index) => (
+            <li key={index}>
+            <h1>{blog.title}</h1>
+                <p>{blog.text}</p>
             </li>
-        </ul>
-    }
+        ));
+        return (<ul>
+            {post}
+        </ul>)
 }
 
 export default BlogList;
