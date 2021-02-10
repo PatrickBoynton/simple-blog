@@ -1,7 +1,6 @@
+import { Component } from 'react';
 import Form from './components/Form';
 import BlogList from './components/BlogList';
-import { Component } from 'react';
-import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -10,32 +9,29 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const blogs = [
+    const posts = [
       {
         title: "This is a fun tile!",
-        text: "This is from the array!"
+        text: "This is a fun body@",
       },
       {
-        title: "This is a second tile!",
-        text: "This is a second blog post!"
+        title: "This is another title!",
+        text: "This is a second post!"
       }
     ]
-    this.setState({blogs});
+    this.setState({posts});
+    localStorage.setItem("posts", this.state);
   }
 
-  addPost(blog) {
-    const blogs = [...this.state.blogs];
-    localStorage.setItem("blogs", blogs);
-
-    this.setState({blogs})
+  addPost(post) {
+    const posts = [...this.state.posts];
+    localStorage.setItem("posts", this.state);
   }
   render() {
-    return (
-      <div className="App">
-        <Form addPost={this.addPost}/>
-        <BlogList blogs={this.state?.blogs}/>
-      </div>
-    );
+    <>
+      <Form />
+      <BlogList />
+    </>
   }
 }
 
