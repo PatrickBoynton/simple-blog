@@ -3,7 +3,11 @@ import { Component } from 'react';
 class Form extends Component {
 
     render() {
-        return <p>Form!</p>
+        return <form>
+                <input type="text"/>
+                <textarea></textarea>
+                <button className="btn">Create Post!</button>
+            </form>
     }
 }
 
