@@ -1,14 +1,19 @@
 
+
 function BlogList(props) {
-        const post = JSON.parse(props.blogs).map((blog, index) => (
-            <li key={index}>
-            <h1>{blog.title}</h1>
-                <p>{blog.text}</p>
-            </li>
-        ));
-        return (<ul>
-            {post}
-        </ul>)
+    console.log(props);
+    // Remember not to do explicit returns.
+    const posts =  props.posts?.map((post, index) => (
+        <li key={index}>
+            <h1>{post.title}</h1>
+            <p>{post.text}</p>
+        </li>
+    ))
+    return (
+        <ul>
+            {posts}
+        </ul>
+    )
 }
 
 export default BlogList;
