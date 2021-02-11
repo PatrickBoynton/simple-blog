@@ -25,6 +25,8 @@ class App extends Component {
 
   addPost(post) {
     const posts = [...this.state.posts];
+    posts.push(post);
+    this.setState({ posts });
     localStorage.setItem("posts", JSON.stringify(posts));
   }
   render() {
