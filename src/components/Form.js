@@ -15,9 +15,10 @@ class Form extends Component {
     }
 
     handleSubmit(event) {
+        
+        console.log(this.state.posts);
         this.props.addPost(this.state);
-        localStorage.setItem("posts", JSON.stringify(this.state));
-        this.setState({title: "", text: ""});
+        // localStorage.setItem("posts", JSON.stringify(this.state));
         event.preventDefault();
     }
 
@@ -27,7 +28,7 @@ class Form extends Component {
                 <label htmlFor="title">Blog Title</label>
                 <input type="text" id="title" name="title" value={this.state.title} onChange={this.handleInput}/>
                 <label htmlFor="text" />
-                <input type="text" name="text" value={this.state.text} onChange={this.handleInput}/>
+                <input type="text" id="text" name="text" value={this.state.text} onChange={this.handleInput}/>
                 <button className="btn">Add Post</button>
             </form>
         )
