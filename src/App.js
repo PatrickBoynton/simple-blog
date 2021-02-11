@@ -29,6 +29,7 @@ class App extends Component {
     this.setState({ posts });
     localStorage.setItem("posts", JSON.stringify(posts));
   }
+
   render() {
    const posts = JSON.parse(localStorage.getItem("posts"))
    return  (<div>
